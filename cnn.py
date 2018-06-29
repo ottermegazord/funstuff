@@ -56,7 +56,7 @@ test_set = test_datagen.flow_from_directory('test_set',
 
 classifier.fit_generator(training_set,
                          steps_per_epoch = 8000,
-                         epochs = 25,
+                         epochs = 3,
                          validation_data = test_set,
                          validation_steps = 2000)
 
@@ -66,7 +66,7 @@ classifier.save("idalyCatGenerator.h5")
 # test model
 
 import numpy as np
-from keras.preprocessing import image
+from keras.preprocessingr import image
 test_image = image.load_img('animal.jpeg', target_size = (64, 64))
 test_image = image.img_to_array(test_image)
 test_image = np.expand_dims(test_image, axis = 0)
